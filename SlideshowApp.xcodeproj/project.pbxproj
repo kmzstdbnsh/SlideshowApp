@@ -13,6 +13,7 @@
 		D6F1381825763EC0008B317D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6F1381625763EC0008B317D /* Main.storyboard */; };
 		D6F1381A25763EC4008B317D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6F1381925763EC4008B317D /* Assets.xcassets */; };
 		D6F1381D25763EC4008B317D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6F1381B25763EC4008B317D /* LaunchScreen.storyboard */; };
+		D6F1382525763FBC008B317D /* EnlargedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F1382425763FBC008B317D /* EnlargedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		D6F1381925763EC4008B317D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D6F1381C25763EC4008B317D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D6F1381E25763EC4008B317D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6F1382425763FBC008B317D /* EnlargedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnlargedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				D6F1381025763EBF008B317D /* AppDelegate.swift */,
 				D6F1381225763EBF008B317D /* SceneDelegate.swift */,
 				D6F1381425763EBF008B317D /* ViewController.swift */,
+				D6F1382425763FBC008B317D /* EnlargedViewController.swift */,
 				D6F1381625763EC0008B317D /* Main.storyboard */,
 				D6F1381925763EC4008B317D /* Assets.xcassets */,
 				D6F1381B25763EC4008B317D /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6F1382525763FBC008B317D /* EnlargedViewController.swift in Sources */,
 				D6F1381525763EC0008B317D /* ViewController.swift in Sources */,
 				D6F1381125763EBF008B317D /* AppDelegate.swift in Sources */,
 				D6F1381325763EBF008B317D /* SceneDelegate.swift in Sources */,
