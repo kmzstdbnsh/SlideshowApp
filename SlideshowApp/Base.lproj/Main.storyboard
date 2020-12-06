@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,39 +12,48 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SlideshowApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4UO-r1-75p" userLabel="Base">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q40-eZ-Iss" userLabel="ImageArea">
-                                        <rect key="frame" x="0.0" y="82" width="375" height="609"/>
+                                        <rect key="frame" x="0.0" y="90.333333333333314" width="414" height="672"/>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xRl-m0-Nme" userLabel="BottunArea">
-                                        <rect key="frame" x="37.666666666666657" y="706" width="300" height="68"/>
+                                        <rect key="frame" x="41.333333333333343" y="777.33333333333337" width="331.33333333333326" height="68"/>
                                         <subviews>
-                                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cj5-MM-yB3" userLabel="PlayStopButton">
-                                                <rect key="frame" x="0.0" y="38" width="300" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cj5-MM-yB3" userLabel="PlayStopButton">
+                                                <rect key="frame" x="0.0" y="38" width="331.33333333333331" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title="再生／停止"/>
+                                                <connections>
+                                                    <action selector="onPlayStopButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ao5-sh-oGb"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nqY-Rf-GKq" userLabel="ForwardButton">
-                                                <rect key="frame" x="154" y="0.0" width="146" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nqY-Rf-GKq" userLabel="ForwardButton">
+                                                <rect key="frame" x="169.66666666666669" y="0.0" width="161.66666666666669" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="進む ▶"/>
+                                                <connections>
+                                                    <action selector="onForwardButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OPM-4p-4cP"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddI-TM-IJp" userLabel="BackButton">
-                                                <rect key="frame" x="0.0" y="0.0" width="146" height="30"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddI-TM-IJp" userLabel="BackButton">
+                                                <rect key="frame" x="0.0" y="0.0" width="161.66666666666666" height="30"/>
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="cki-qR-Ex4"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <state key="normal" title="◀ 戻る"/>
+                                                <connections>
+                                                    <action selector="onBackButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NUK-Sj-qX5"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -65,7 +74,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R3H-Fq-TZH" userLabel="HeaderArea">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="81.333333333333329"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="89.666666666666671"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
@@ -96,6 +105,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="BackButton" destination="ddI-TM-IJp" id="AK4-Py-7oM"/>
+                        <outlet property="Base" destination="4UO-r1-75p" id="vpj-Ox-9o0"/>
+                        <outlet property="ForwardButton" destination="nqY-Rf-GKq" id="hx1-IB-eYI"/>
+                        <outlet property="PlayStopButton" destination="Cj5-MM-yB3" id="jqd-54-Wjq"/>
+                        <outlet property="imageArea" destination="Q40-eZ-Iss" id="9eI-WV-0nP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -106,14 +122,14 @@
             <objects>
                 <viewController id="Xdn-dg-7aX" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jti-vC-fnO">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="47j-35-pxE" userLabel="Base">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5In-xH-1xX" userLabel="ImageArea">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

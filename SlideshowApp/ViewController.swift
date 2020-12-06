@@ -10,12 +10,110 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var Base: UIView!
+    @IBOutlet weak var imageArea: UIImageView!
+    @IBOutlet weak var ForwardButton: UIButton!
+    @IBOutlet weak var BackButton: UIButton!
+    @IBOutlet weak var PlayStopButton: UIButton!
+    
+    //進むボタン
+    @IBAction func onForwardButton(_ sender: Any) {
+        if self.timer == nil && imageNo < imageNameArray.count-1 {
+            imageNo += 1
+            ForwardButton.backgroundColor = onButtonColor
+            displayImage()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                self.ForwardButton.backgroundColor = self.offButtonColor
+            }
+        }
+    }
+    
+    //戻るボタン
+    @IBAction func onBackButton(_ sender: Any) {
+        if self.timer == nil && imageNo > 0 {
+            imageNo -= 1
+            BackButton.backgroundColor = onButtonColor
+            displayImage()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                self.BackButton.backgroundColor = self.offButtonColor
+            }
+        }
+    }
+    
+    //再生/停止ボタン
+    @IBAction func onPlayStopButton(_ sender: Any) {
+        // 動作中のタイマーを1つに保つために、 timer が存在しない場合だけ、タイマーを生成して動作させる
+        if self.timer == nil {
+            self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(displayImage2), userInfo: nil, repeats: true)
+            PlayStopButton.backgroundColor = onButtonColor
+        }
+        else {
+            self.timer.invalidate()   // タイマーを停止する
+            self.timer = nil          // startTimer() の self.timer == nil で判断するために、 self.timer = nil としておく
+            PlayStopButton.backgroundColor = offButtonColor
+        }
+        
+    }
+    
+    //画像
+    var imageNo : Int = 0
+    
+    let imageNameArray = [
+    "kadai3Image1",
+    "kadai3Image2",
+    "kadai3Image3",
+    "kadai3Image4",
+    "kadai3Image5"
+    ]
+    
+    //タイマー
+    var timer: Timer!
+    
+    //色
+    let baseColor = UIColor(red:1.0, green:0.2, blue:0.22, alpha:1.0)
+    let buttonTextColor =  UIColor(red:1.0, green:0.6, blue:0.61, alpha:1.0)
+    let onButtonColor = UIColor(red:0, green:0, blue:0, alpha:1.0)
+    let offButtonColor = UIColor(red:0, green:0, blue:0, alpha:0.5)
+    
+    
+    //画像を表示するメソッド
+    func displayImage() {
+        imageArea.image = UIImage(named: imageNameArray[imageNo])
+    }
+    
+    //自動再生用画像表示メソッド
+    @objc func displayImage2(){
+        if imageNo < imageNameArray.count-1 {
+            imageNo += 1
+        }
+        imageArea.image = UIImage(named: imageNameArray[imageNo])
+        if imageNo == imageNameArray.count-1 {
+            self.timer.invalidate()   // タイマーを停止する
+            self.timer = nil
+            PlayStopButton.backgroundColor = offButtonColor
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        ForwardButton.backgroundColor = offButtonColor
+        ForwardButton.setTitleColor( buttonTextColor, for: .normal )
+        BackButton.backgroundColor = offButtonColor
+        BackButton.setTitleColor( buttonTextColor, for: .normal )
+        PlayStopButton.backgroundColor = offButtonColor
+        PlayStopButton.setTitleColor( buttonTextColor, for: .normal )
+        Base.backgroundColor = baseColor
+        imageArea.image = UIImage(named: "kadai3Image1")
     }
 
-
+    override func didReceiveMemoryWarning() {
+         super.didReceiveMemoryWarning()
+         // Dispose of any resources that can be recreated.
+     }
+    
 }
 
 /*
