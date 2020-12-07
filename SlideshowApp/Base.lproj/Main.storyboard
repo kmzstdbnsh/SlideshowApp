@@ -115,13 +115,13 @@
                         <outlet property="ForwardButton" destination="nqY-Rf-GKq" id="hx1-IB-eYI"/>
                         <outlet property="PlayStopButton" destination="Cj5-MM-yB3" id="jqd-54-Wjq"/>
                         <outlet property="imageArea" destination="Q40-eZ-Iss" id="9eI-WV-0nP"/>
+                        <segue destination="Xdn-dg-7aX" kind="presentation" identifier="toEnlargedView" modalPresentationStyle="fullScreen" id="vvb-n8-9k0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="Scj-3e-cdW">
                     <connections>
                         <action selector="TapImage:" destination="BYZ-38-t0r" id="7Gf-8o-PtL"/>
-                        <segue destination="Xdn-dg-7aX" kind="presentation" modalPresentationStyle="fullScreen" id="Kxn-Tr-Mp8"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -142,11 +142,19 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="900"/>
                                         <gestureRecognizers/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5y-0M-RGs">
-                                        <rect key="frame" x="191.66666666666666" y="836" width="31" height="30"/>
+                                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0hs-1K-SIS">
+                                        <rect key="frame" x="187" y="841" width="40" height="25"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="ZqL-uS-UmG"/>
-                                            <constraint firstAttribute="width" constant="31" id="w4I-BQ-JpU"/>
+                                            <constraint firstAttribute="width" constant="40" id="A7a-6X-NdD"/>
+                                            <constraint firstAttribute="height" constant="25" id="lWA-jw-tOq"/>
+                                        </constraints>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5y-0M-RGs">
+                                        <rect key="frame" x="187" y="841" width="40" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="ZqL-uS-UmG"/>
+                                            <constraint firstAttribute="width" constant="40" id="w4I-BQ-JpU"/>
                                         </constraints>
                                         <state key="normal" title="戻る">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -158,12 +166,14 @@
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="f5y-0M-RGs" secondAttribute="bottom" constant="30" id="DyK-Dz-7OK"/>
+                                    <constraint firstAttribute="bottom" secondItem="0hs-1K-SIS" secondAttribute="bottom" constant="30" id="EW6-bR-flP"/>
                                     <constraint firstItem="5In-xH-1xX" firstAttribute="centerX" secondItem="47j-35-pxE" secondAttribute="centerX" id="M4M-tE-3uQ"/>
                                     <constraint firstItem="5In-xH-1xX" firstAttribute="centerY" secondItem="47j-35-pxE" secondAttribute="centerY" id="OxF-Zw-d38"/>
-                                    <constraint firstAttribute="bottom" secondItem="f5y-0M-RGs" secondAttribute="bottom" constant="30" id="Xrm-wK-TjP"/>
                                     <constraint firstItem="5In-xH-1xX" firstAttribute="width" secondItem="47j-35-pxE" secondAttribute="width" id="bFE-mn-sfa"/>
                                     <constraint firstItem="5In-xH-1xX" firstAttribute="height" secondItem="47j-35-pxE" secondAttribute="height" id="jPe-2w-LcE"/>
-                                    <constraint firstItem="f5y-0M-RGs" firstAttribute="centerX" secondItem="47j-35-pxE" secondAttribute="centerX" id="odu-q2-eIe"/>
+                                    <constraint firstItem="0hs-1K-SIS" firstAttribute="centerX" secondItem="47j-35-pxE" secondAttribute="centerX" id="whH-md-GYr"/>
+                                    <constraint firstItem="f5y-0M-RGs" firstAttribute="centerX" secondItem="47j-35-pxE" secondAttribute="centerX" id="yJR-V3-0fU"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -178,6 +188,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="kw7-4J-AMW"/>
                     <connections>
+                        <outlet property="BackButton" destination="0hs-1K-SIS" id="OdC-Yl-M9L"/>
                         <outlet property="Base" destination="47j-35-pxE" id="wSr-k8-OYP"/>
                         <outlet property="ImageArea" destination="5In-xH-1xX" id="2Hq-Hw-tkb"/>
                     </connections>

@@ -18,8 +18,19 @@ class ViewController: UIViewController {
     
     //進むボタン
     @IBAction func onForwardButton(_ sender: Any) {
-        if self.timer == nil && imageNo < imageNameArray.count-1 {
-            imageNo += 1
+        if self.timer == nil {
+            if imageNo < imageNameArray.count-1 {
+                imageNo += 1
+            }
+            else {
+                imageNo = 0
+            }
+            if imageNo > 3 {
+                Base.backgroundColor = baseColor2
+            }
+            else {
+                Base.backgroundColor = baseColor
+            }
             ForwardButton.backgroundColor = onButtonColor
             displayImage()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
@@ -30,8 +41,19 @@ class ViewController: UIViewController {
     
     //戻るボタン
     @IBAction func onBackButton(_ sender: Any) {
-        if self.timer == nil && imageNo > 0 {
-            imageNo -= 1
+        if self.timer == nil {
+            if imageNo > 0 {
+                imageNo -= 1
+            }
+            else {
+                imageNo = imageNameArray.count-1
+            }
+            if imageNo > 3 {
+                Base.backgroundColor = baseColor2
+            }
+            else {
+                Base.backgroundColor = baseColor
+            }
             BackButton.backgroundColor = onButtonColor
             displayImage()
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
@@ -46,18 +68,27 @@ class ViewController: UIViewController {
         if self.timer == nil {
             self.timer = Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(displayImage2), userInfo: nil, repeats: true)
             PlayStopButton.backgroundColor = onButtonColor
+            ForwardButton.setTitleColor( buttonTextColor2, for: .normal )
+            BackButton.setTitleColor( buttonTextColor2, for: .normal )
         }
         else {
             self.timer.invalidate()   // タイマーを停止する
             self.timer = nil          // startTimer() の self.timer == nil で判断するために、 self.timer = nil としておく
             PlayStopButton.backgroundColor = offButtonColor
+            ForwardButton.setTitleColor( buttonTextColor, for: .normal )
+            BackButton.setTitleColor( buttonTextColor, for: .normal )
         }
         
     }
-    /*
+    
     @IBAction func TapImage(_ sender: Any) {
-        performSegue(withIdentifier: "result",sender: nil)
-    }*/
+        if self.timer != nil {
+            self.timer.invalidate()   // タイマーを停止する
+            self.timer = nil          // startTimer() の self.timer == nil で判断するために、 self.timer = nil としておく
+            PlayStopButton.backgroundColor = offButtonColor
+        }
+        performSegue(withIdentifier: "toEnlargedView",sender: nil)
+    }
     
     
     @IBAction func unwind(_ segue: UIStoryboardSegue) {
@@ -71,15 +102,18 @@ class ViewController: UIViewController {
     "kadai3Image2",
     "kadai3Image3",
     "kadai3Image4",
-    "kadai3Image5"
+    "kadai3Image5",
+    "kadai3Image6"
     ]
     
     //タイマー
     var timer: Timer!
     
     //色
-    let baseColor = UIColor(red:1.0, green:0.2, blue:0.22, alpha:1.0)
-    let buttonTextColor =  UIColor(red:1.0, green:0.6, blue:0.61, alpha:1.0)
+    let baseColor = UIColor(red:0.2, green:0.1, blue:0.8, alpha:1.0)
+    let baseColor2 = UIColor(red:1.0, green:0.2, blue:0.22, alpha:1.0)
+    let buttonTextColor =  UIColor(red:1.0, green:1.0, blue:1.0, alpha:1.0)
+    let buttonTextColor2 =  UIColor(red:1.0, green:1.0, blue:1.0, alpha:0.4)
     let onButtonColor = UIColor(red:0, green:0, blue:0, alpha:1.0)
     let offButtonColor = UIColor(red:0, green:0, blue:0, alpha:0.5)
     
@@ -94,12 +128,21 @@ class ViewController: UIViewController {
         if imageNo < imageNameArray.count-1 {
             imageNo += 1
         }
+        else {
+            imageNo = 0
+        }
+        if imageNo > 3 {
+            Base.backgroundColor = baseColor2
+        }
+        else {
+            Base.backgroundColor = baseColor
+        }
         imageArea.image = UIImage(named: imageNameArray[imageNo])
-        if imageNo == imageNameArray.count-1 {
+        /*if imageNo == imageNameArray.count-1 {
             self.timer.invalidate()   // タイマーを停止する
             self.timer = nil
             PlayStopButton.backgroundColor = offButtonColor
-        }
+        }*/
     }
     
     
@@ -119,8 +162,13 @@ class ViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let enlargedViewController:EnlargedViewController = segue.destination as! EnlargedViewController
-        
-        enlargedViewController.baseColor = baseColor
+
+        if imageNo > 3 {
+            enlargedViewController.baseColor = baseColor2
+        }
+        else {
+            enlargedViewController.baseColor = baseColor
+        }
         enlargedViewController.imageName = imageNameArray[imageNo]
     }
     

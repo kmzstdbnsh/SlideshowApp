@@ -12,7 +12,9 @@ class EnlargedViewController: UIViewController {
 
     @IBOutlet weak var Base: UIView!
     @IBOutlet weak var ImageArea: UIImageView!
-
+    @IBOutlet weak var BackButton: UIView!
+    
+    
     var baseColor : UIColor?
     var imageName : String!
     
@@ -20,6 +22,7 @@ class EnlargedViewController: UIViewController {
         super.viewDidLoad()
         
         Base.backgroundColor = baseColor
+        BackButton.backgroundColor = baseColor
         ImageArea.image = UIImage(named: imageName)
         // Do any additional setup after loading the view.
     }
