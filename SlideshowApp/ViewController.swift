@@ -54,6 +54,14 @@ class ViewController: UIViewController {
         }
         
     }
+    /*
+    @IBAction func TapImage(_ sender: Any) {
+        performSegue(withIdentifier: "result",sender: nil)
+    }*/
+    
+    
+    @IBAction func unwind(_ segue: UIStoryboardSegue) {
+    }
     
     //画像
     var imageNo : Int = 0
@@ -109,10 +117,14 @@ class ViewController: UIViewController {
         imageArea.image = UIImage(named: "kadai3Image1")
     }
 
-    override func didReceiveMemoryWarning() {
-         super.didReceiveMemoryWarning()
-         // Dispose of any resources that can be recreated.
-     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let enlargedViewController:EnlargedViewController = segue.destination as! EnlargedViewController
+        
+        enlargedViewController.baseColor = baseColor
+        enlargedViewController.imageName = imageNameArray[imageNo]
+    }
+    
+    
     
 }
 

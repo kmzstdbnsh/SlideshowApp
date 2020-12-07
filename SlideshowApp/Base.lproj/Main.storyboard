@@ -18,8 +18,12 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4UO-r1-75p" userLabel="Base">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q40-eZ-Iss" userLabel="ImageArea">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q40-eZ-Iss" userLabel="ImageArea">
                                         <rect key="frame" x="0.0" y="90.333333333333314" width="414" height="672"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Scj-3e-cdW" appends="YES" id="viJ-aJ-99e"/>
+                                        </connections>
                                     </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xRl-m0-Nme" userLabel="BottunArea">
                                         <rect key="frame" x="41.333333333333343" y="777.33333333333337" width="331.33333333333326" height="68"/>
@@ -114,13 +118,19 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Scj-3e-cdW">
+                    <connections>
+                        <action selector="TapImage:" destination="BYZ-38-t0r" id="7Gf-8o-PtL"/>
+                        <segue destination="Xdn-dg-7aX" kind="presentation" modalPresentationStyle="fullScreen" id="Kxn-Tr-Mp8"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="137.77173913043478"/>
         </scene>
-        <!--View Controller-->
+        <!--Enlarged View Controller-->
         <scene sceneID="OAM-5R-8q4">
             <objects>
-                <viewController id="Xdn-dg-7aX" sceneMemberID="viewController">
+                <viewController id="Xdn-dg-7aX" customClass="EnlargedViewController" customModule="SlideshowApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jti-vC-fnO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -128,16 +138,32 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="47j-35-pxE" userLabel="Base">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5In-xH-1xX" userLabel="ImageArea">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5In-xH-1xX" userLabel="ImageArea">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="900"/>
+                                        <gestureRecognizers/>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5y-0M-RGs">
+                                        <rect key="frame" x="191.66666666666666" y="836" width="31" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="ZqL-uS-UmG"/>
+                                            <constraint firstAttribute="width" constant="31" id="w4I-BQ-JpU"/>
+                                        </constraints>
+                                        <state key="normal" title="戻る">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="C0j-LL-nry" kind="unwind" unwindAction="unwind:" id="qAb-nO-7GI"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="5In-xH-1xX" firstAttribute="centerX" secondItem="47j-35-pxE" secondAttribute="centerX" id="M4M-tE-3uQ"/>
                                     <constraint firstItem="5In-xH-1xX" firstAttribute="centerY" secondItem="47j-35-pxE" secondAttribute="centerY" id="OxF-Zw-d38"/>
+                                    <constraint firstAttribute="bottom" secondItem="f5y-0M-RGs" secondAttribute="bottom" constant="30" id="Xrm-wK-TjP"/>
                                     <constraint firstItem="5In-xH-1xX" firstAttribute="width" secondItem="47j-35-pxE" secondAttribute="width" id="bFE-mn-sfa"/>
                                     <constraint firstItem="5In-xH-1xX" firstAttribute="height" secondItem="47j-35-pxE" secondAttribute="height" id="jPe-2w-LcE"/>
+                                    <constraint firstItem="f5y-0M-RGs" firstAttribute="centerX" secondItem="47j-35-pxE" secondAttribute="centerX" id="odu-q2-eIe"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -150,10 +176,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bot-V9-eDh"/>
                     </view>
+                    <navigationItem key="navigationItem" id="kw7-4J-AMW"/>
+                    <connections>
+                        <outlet property="Base" destination="47j-35-pxE" id="wSr-k8-OYP"/>
+                        <outlet property="ImageArea" destination="5In-xH-1xX" id="2Hq-Hw-tkb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ytg-4s-fru" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="C0j-LL-nry" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1085.5999999999999" y="137.4384236453202"/>
+            <point key="canvasLocation" x="1085.5072463768117" y="137.27678571428569"/>
         </scene>
     </scenes>
 </document>

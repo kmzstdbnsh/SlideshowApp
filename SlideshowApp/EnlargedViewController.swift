@@ -10,9 +10,17 @@ import UIKit
 
 class EnlargedViewController: UIViewController {
 
+    @IBOutlet weak var Base: UIView!
+    @IBOutlet weak var ImageArea: UIImageView!
+
+    var baseColor : UIColor?
+    var imageName : String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        Base.backgroundColor = baseColor
+        ImageArea.image = UIImage(named: imageName)
         // Do any additional setup after loading the view.
     }
     
