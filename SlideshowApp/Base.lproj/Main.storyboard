@@ -25,6 +25,12 @@
                                             <outletCollection property="gestureRecognizers" destination="Scj-3e-cdW" appends="YES" id="viJ-aJ-99e"/>
                                         </connections>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IfI-uT-MnY">
+                                        <rect key="frame" x="41.333333333333343" y="736.33333333333337" width="331.33333333333326" height="11"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xRl-m0-Nme" userLabel="BottunArea">
                                         <rect key="frame" x="41.333333333333343" y="777.33333333333337" width="331.33333333333326" height="68"/>
                                         <subviews>
@@ -85,6 +91,7 @@
                                 <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="xRl-m0-Nme" firstAttribute="height" secondItem="4UO-r1-75p" secondAttribute="height" multiplier="0.06" priority="750" id="5b1-la-pW3"/>
+                                    <constraint firstItem="xRl-m0-Nme" firstAttribute="top" secondItem="IfI-uT-MnY" secondAttribute="bottom" constant="30" id="IVX-Zp-kWC"/>
                                     <constraint firstItem="xRl-m0-Nme" firstAttribute="centerX" secondItem="4UO-r1-75p" secondAttribute="centerX" id="J3U-AW-f9P"/>
                                     <constraint firstItem="R3H-Fq-TZH" firstAttribute="top" secondItem="4UO-r1-75p" secondAttribute="top" id="Lzx-o8-1Tm"/>
                                     <constraint firstItem="R3H-Fq-TZH" firstAttribute="leading" secondItem="4UO-r1-75p" secondAttribute="leading" id="M78-19-85n"/>
@@ -93,8 +100,10 @@
                                     <constraint firstItem="Q40-eZ-Iss" firstAttribute="height" secondItem="4UO-r1-75p" secondAttribute="height" multiplier="0.75" priority="750" id="V0m-h6-e9S"/>
                                     <constraint firstItem="R3H-Fq-TZH" firstAttribute="height" secondItem="4UO-r1-75p" secondAttribute="height" multiplier="0.1" id="ake-9H-Z95"/>
                                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="xRl-m0-Nme" secondAttribute="bottom" constant="20" id="c1m-lW-w2m"/>
+                                    <constraint firstItem="IfI-uT-MnY" firstAttribute="leading" secondItem="xRl-m0-Nme" secondAttribute="leading" id="d3i-tE-w5P"/>
                                     <constraint firstItem="Q40-eZ-Iss" firstAttribute="top" secondItem="R3H-Fq-TZH" secondAttribute="bottom" constant="0.67000000000000004" id="gbf-YZ-Cel"/>
                                     <constraint firstAttribute="trailing" secondItem="Q40-eZ-Iss" secondAttribute="trailing" id="piT-hr-E3T"/>
+                                    <constraint firstItem="IfI-uT-MnY" firstAttribute="trailing" secondItem="xRl-m0-Nme" secondAttribute="trailing" id="s0d-n3-IFf"/>
                                     <constraint firstItem="Q40-eZ-Iss" firstAttribute="leading" secondItem="4UO-r1-75p" secondAttribute="leading" id="t0g-nj-Svb"/>
                                     <constraint firstItem="xRl-m0-Nme" firstAttribute="top" secondItem="Q40-eZ-Iss" secondAttribute="bottom" constant="15" id="vEz-7g-D9f"/>
                                 </constraints>
@@ -115,6 +124,7 @@
                         <outlet property="ForwardButton" destination="nqY-Rf-GKq" id="hx1-IB-eYI"/>
                         <outlet property="PlayStopButton" destination="Cj5-MM-yB3" id="jqd-54-Wjq"/>
                         <outlet property="imageArea" destination="Q40-eZ-Iss" id="9eI-WV-0nP"/>
+                        <outlet property="imageNumber" destination="IfI-uT-MnY" id="hfP-d0-L3t"/>
                         <segue destination="Xdn-dg-7aX" kind="presentation" identifier="toEnlargedView" modalPresentationStyle="fullScreen" id="vvb-n8-9k0"/>
                     </connections>
                 </viewController>
