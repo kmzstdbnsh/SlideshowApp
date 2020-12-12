@@ -12,6 +12,7 @@
 		D632973725837F1C009CD744 /* kadai3Image1.png in Resources */ = {isa = PBXBuildFile; fileRef = D632973225837F1C009CD744 /* kadai3Image1.png */; };
 		D632973825837F1C009CD744 /* kadai3Image2.png in Resources */ = {isa = PBXBuildFile; fileRef = D632973325837F1C009CD744 /* kadai3Image2.png */; };
 		D632973925837F1C009CD744 /* kadai3Image3.png in Resources */ = {isa = PBXBuildFile; fileRef = D632973425837F1C009CD744 /* kadai3Image3.png */; };
+		D632973B25849E0C009CD744 /* kadai3Image6.png in Resources */ = {isa = PBXBuildFile; fileRef = D632973A25849E0C009CD744 /* kadai3Image6.png */; };
 		D6F1381125763EBF008B317D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F1381025763EBF008B317D /* AppDelegate.swift */; };
 		D6F1381325763EBF008B317D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F1381225763EBF008B317D /* SceneDelegate.swift */; };
 		D6F1381525763EC0008B317D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F1381425763EBF008B317D /* ViewController.swift */; };
@@ -27,6 +28,7 @@
 		D632973225837F1C009CD744 /* kadai3Image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kadai3Image1.png; sourceTree = "<group>"; };
 		D632973325837F1C009CD744 /* kadai3Image2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kadai3Image2.png; sourceTree = "<group>"; };
 		D632973425837F1C009CD744 /* kadai3Image3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kadai3Image3.png; sourceTree = "<group>"; };
+		D632973A25849E0C009CD744 /* kadai3Image6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kadai3Image6.png; sourceTree = "<group>"; };
 		D6F1380D25763EBF008B317D /* SlideshowApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlideshowApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6F1381025763EBF008B317D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6F1381225763EBF008B317D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +54,7 @@
 		D632972F25837F1C009CD744 /* imageFolder */ = {
 			isa = PBXGroup;
 			children = (
+				D632973A25849E0C009CD744 /* kadai3Image6.png */,
 				D632973025837F1C009CD744 /* kadai3Image4.png */,
 				D632973125837F1C009CD744 /* kadai3Image5.png */,
 				D632973225837F1C009CD744 /* kadai3Image1.png */,
@@ -154,6 +157,7 @@
 				D632973725837F1C009CD744 /* kadai3Image1.png in Resources */,
 				D6F1381D25763EC4008B317D /* LaunchScreen.storyboard in Resources */,
 				D632973825837F1C009CD744 /* kadai3Image2.png in Resources */,
+				D632973B25849E0C009CD744 /* kadai3Image6.png in Resources */,
 				D6F1381A25763EC4008B317D /* Assets.xcassets in Resources */,
 				D632973625837F1C009CD744 /* kadai3Image5.png in Resources */,
 				D6F1381825763EC0008B317D /* Main.storyboard in Resources */,
